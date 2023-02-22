@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import AppContext from "../context"
@@ -5,6 +6,7 @@ import AppContext from "../context"
 const ChatPage = () => {
     const { userName, roomName } = useContext(AppContext)
     const [ messages, setMessages ] = useState([])
+    const [ sendMsg, setSendMsg ] = useState('')
 
     useEffect(() => {
         const fetchMessages = async () => {
@@ -15,6 +17,19 @@ const ChatPage = () => {
         }
         fetchMessages()
     }, [])
+
+    const onClickSend = async () => {
+        console.log('sending new message', sendMsg)
+        await axios(`http://localhost:8000/api/chat/`, {
+            method: 'POST',
+            data: {
+                'userName': userName,
+                'roomName': roomName,
+                'message': sendMsg,
+            }
+        })
+    }
+
     return <div>
         <h1>This is Chat Page</h1>
         <p>Room Name : {roomName}</p>
@@ -34,7 +49,10 @@ const ChatPage = () => {
                     <p>{item.userName} : {item.message}</p>
                 </div>
             })}
-            <button>Send message</button>
+            <div>
+                <input type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                <button onClick={onClickSend}>Send message</button>
+            </div>
         </div>
     </div>
 }
