@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import AppContext from "../context"
 import { useNavigate } from "react-router-dom"
+import '../styles/Home.scss'
 
 const HomePage = () => {
     const { userName, setUserName, roomName, setRoomName } = useContext(AppContext)
@@ -11,9 +12,9 @@ const HomePage = () => {
         navigate('/chat')
     }
     
-    return <div>
-        This is Home Page
-        <div>
+    return <div className="container">
+        
+        <div className="wrapper">
             <label htmlFor='room'>Enter the Room name</label>
             <input
                 type='text'
@@ -22,6 +23,8 @@ const HomePage = () => {
                 value={roomName}
                 onChange={e => setRoomName(e.target.value)}
             />
+        </div>
+        <div className="wrapper">
             <label htmlFor='user'>Enter the User name</label>
             <input
                 type='text'

@@ -2,6 +2,7 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import AppContext from "../context"
+import "../styles/Chat.scss"
 
 const ChatPage = () => {
     const { userName, roomName } = useContext(AppContext)
@@ -34,23 +35,45 @@ const ChatPage = () => {
         })
     }
 
-    return <div>
-        <h1>This is Chat Page</h1>
-        <p>Room Name : {roomName}</p>
-        <p>User Name : {userName}</p>
+    const handleEditMsg = async (message) => {
+        console.log('delete a message', message)
+        await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
+            method: 'PUT',
+            data: {
 
+            }
+        })
+    }
+    const handleDeleteMsg = async (message) => {
+        console.log('delete a message', message)
+        await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
+            method: 'DELETE',
+        })
+    }
+
+    return <div className="roomContainer">
         <div>
             <Link to='/'>
                 Back to Homepage
             </Link>
         </div>
 
+        <h1 className="roomTitle">{roomName}</h1>
+        {/* <p>Room Name : {roomName}</p> */}
+        <h2>User Name : {userName}</h2>
+
         <div>
             The messages here
 
             {messages && messages.map((item) => {
                 return <div key={item.id}>
-                    <p>{item.userName} : {item.message}</p>
+                    <p>
+                        {item.userName} : {item.message}
+                        {item.userName === userName && <>
+                            <button onClick={() => handleEditMsg(item)}>edit</button>
+                            <button onClick={() => handleDeleteMsg(item)}>X</button>
+                        </>}
+                    </p>
                 </div>
             })}
             <div>
