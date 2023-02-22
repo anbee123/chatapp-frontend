@@ -80,17 +80,18 @@ const ChatPage = () => {
     }
 
     return <div className="roomContainer">
-        <div>
-            <Link to='/'>
-                Select Other Rooms
-            </Link>
-        </div>
+       
         <div className="chat-container">
 
         <div className="names">
         <h1 className="header"> Room Name:{roomName}</h1>
         {/* <p>Room Name : {roomName}</p> */}
         <h2 className="user-name">User Name: {userName}</h2>
+        </div>
+        <div className="link">
+            <Link to='/'>
+                Select Other Rooms
+            </Link>
         </div>
         <div className="button">
         <div>
@@ -114,8 +115,10 @@ const ChatPage = () => {
                             <>
                                 <span>{item.message}</span>
                                 {item.userName === userName && <>
+                                    <div className="edit-button">
                                     <button onClick={() => handleEditMsg(item)}>edit</button>
                                     <button onClick={() => handleDeleteMsg(item)}>X</button>
+                                    </div>
                                 </>}
                             </>
                         }

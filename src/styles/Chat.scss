@@ -14,6 +14,14 @@
 
 
 }
+.link{
+    position: 'relative';
+    top: '315px';
+    margin-top: -55px; /*for exact positioning */
+    margin-top: -5%; /* for relative positioning */
+    float: right;
+
+}
 .user-name{
     position: 'relative';
     top: '-15px';
@@ -35,6 +43,18 @@
 .button{
     padding:5px 5px;
     margin-top: 765px;
+    &:hover {
+        background-color: rgba(236, 241, 238, 0.6);
+        color: rgb(0, 255, 115);
+    }
+}
+.edit-button{
+    padding:5px 5px;
+    margin-top: 765px;
+    &:hover {
+        background-color: rgba(236, 241, 238, 0.6);
+        color: rgb(0, 255, 115);
+    }
 }
 
 .chat-container{
