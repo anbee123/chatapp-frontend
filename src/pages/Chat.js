@@ -44,14 +44,7 @@ const ChatPage = () => {
         console.log('delete a message', item)
         setEditItemId(item.id)
         setEditItemValue(item.message)
-        // await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
-        //     method: 'PUT',
-        //     data: {
-        //         'userName': 'user5',
-        //         'roomName': 'room5',
-        //         'message': 'updated message --- 1',
-        //     }
-        // })
+    
     }
     const handleDeleteMsg = async (message) => {
         console.log('delete a message', message)
@@ -87,13 +80,13 @@ const ChatPage = () => {
         </div>
 
         <h1 className="roomTitle">{roomName}</h1>
-        {/* <p>Room Name : {roomName}</p> */}
+       
         <h2>User Name : {userName}</h2>
 
         <div>
             The messages here
 
-            {messages && messages.map((item) => {
+            {messages && messages.sort((a, b) => a.id > b.id ? 1 : -1).map((item) => {
                 return <div key={item.id}>
                     <p>
                         <strong>{item.userName}</strong> :
