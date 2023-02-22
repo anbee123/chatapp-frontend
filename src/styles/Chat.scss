@@ -5,5 +5,7 @@
 }
 
 .roomTitle {
-    // deletebutton and edit button on chatpage, is that ok? they required that for this project
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
