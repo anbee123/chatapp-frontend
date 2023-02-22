@@ -11,7 +11,7 @@
     align-items:center;
     font-family: Red hat Display, sans-serif;
 	font-weight: 400;
-
+    
 
 }
 .link{
@@ -59,8 +59,32 @@
         color: rgb(0, 255, 115);
     }
 }
+@keyframes slideInLeft{
+    from{
+        transform: translateX(-300px);
+    }
+    to{
+        transform: translateX(0)
 
+    }
+}
+.slideInLeft{
+    animation: slideInLeft 1s ease-in;
+}
 
+.slideInRight{
+    animation: slideInRight 1s ease-in;
+}
+
+@keyframes slideInRight{
+    from{
+        transform: translateX(300px);
+    }
+    to{
+        transform: translateX(0)
+
+    }
+}
 .chat-container{
     display:flex;
     height:80vh;
@@ -70,13 +94,16 @@
     justify-content:center;
  
     padding: 20px 30px;
+   
+    animation-duration: 2s;
+    animation-timing-function:ease-in;
 }
 body{
     height:80vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    background: url('https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg');
+    background: url('https://cdn.pixabay.com/photo/2021/10/18/19/27/mobile-phone-6721915_960_720.png');
     background-size: cover;
     background-position: center	center;
     min-height: 100vh;
@@ -86,3 +113,4 @@ body{
     justify-content: center;
     text-align: center;
 }
+
