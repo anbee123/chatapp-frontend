@@ -16,6 +16,10 @@ const ChatPage = () => {
                 .catch(err => console.log(err))
         }
         fetchMessages()
+        // fetch messages every one second
+        const timer = setInterval(() => {
+            fetchMessages()
+        }, 1000)
     }, [])
 
     const onClickSend = async () => {
