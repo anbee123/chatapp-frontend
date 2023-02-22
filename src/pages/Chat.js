@@ -119,6 +119,5 @@ const ChatPage = () => {
             </div>
         </div>
     </div>
-    </div>
 }
 export default ChatPage
