@@ -8,6 +8,8 @@ const ChatPage = () => {
     const { userName, roomName } = useContext(AppContext)
     const [ messages, setMessages ] = useState([])
     const [ sendMsg, setSendMsg ] = useState('')
+    const [ editItemId, setEditItemId ] = useState('')
+    const [ editItemValue, setEditItemValue ] = useState('')
 
     useEffect(() => {
         const fetchMessages = async () => {
@@ -21,6 +23,9 @@ const ChatPage = () => {
         const timer = setInterval(() => {
             fetchMessages()
         }, 1000)
+        return () => {
+            clearInterval(timer)
+        }
     }, [])
 
     const onClickSend = async () => {
@@ -35,20 +40,43 @@ const ChatPage = () => {
         })
     }
 
-    const handleEditMsg = async (message) => {
-        console.log('delete a message', message)
-        await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
-            method: 'PUT',
-            data: {
-
-            }
-        })
+    const handleEditMsg = async (item) => {
+        console.log('delete a message', item)
+        setEditItemId(item.id)
+        setEditItemValue(item.message)
+        // await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
+        //     method: 'PUT',
+        //     data: {
+        //         'userName': 'user5',
+        //         'roomName': 'room5',
+        //         'message': 'updated message --- 1',
+        //     }
+        // })
     }
     const handleDeleteMsg = async (message) => {
         console.log('delete a message', message)
         await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
             method: 'DELETE',
         })
+    }
+
+    const handleEditingSave = async (item) => {
+        console.log('update message')
+        await axios(`http://localhost:8000/api/chat/edit/${item.id}`, {
+            method: 'PUT',
+            data: {
+                'userName': item.userName,
+                'roomName': item.roomName,
+                'message': editItemValue,
+            }
+        })
+        setEditItemId('')
+        setEditItemValue('')
+    }
+    const handleEditingCancel = async (item) => {
+        console.log('cancel message')
+        setEditItemId('')
+        setEditItemValue('')
     }
 
     return <div className="roomContainer">
@@ -68,11 +96,26 @@ const ChatPage = () => {
             {messages && messages.map((item) => {
                 return <div key={item.id}>
                     <p>
-                        {item.userName} : {item.message}
-                        {item.userName === userName && <>
-                            <button onClick={() => handleEditMsg(item)}>edit</button>
-                            <button onClick={() => handleDeleteMsg(item)}>X</button>
-                        </>}
+                        <strong>{item.userName}</strong> :
+                        {editItemId === item.id ?
+                            <>
+                                <input
+                                    type='text'
+                                    value={editItemValue}
+                                    onChange={e => setEditItemValue(e.target.value)}
+                                />
+                                <button onClick={() => handleEditingSave(item)}>save</button>
+                                <button onClick={() => handleEditingCancel(item)}>cancel</button>
+                            </>
+                            :
+                            <>
+                                <span>{item.message}</span>
+                                {item.userName === userName && <>
+                                    <button onClick={() => handleEditMsg(item)}>edit</button>
+                                    <button onClick={() => handleDeleteMsg(item)}>X</button>
+                                </>}
+                            </>
+                        }
                     </p>
                 </div>
             })}
