@@ -4,8 +4,9 @@ const HomePage = () => {
     const [userName, setUserName] = useState('')
     const [roomName, setRoomName] = useState('')
 
-    const onRoomCreate = () => {
+    const onRoomCreate = async () => {
         console.log('inputed values: ', {userName, roomName})
+        await fetch()
     }
     
     return <div>
