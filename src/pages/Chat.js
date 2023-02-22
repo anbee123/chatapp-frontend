@@ -125,6 +125,8 @@ const ChatPage = () => {
            
                 <input placeholder="Type The messages here" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
                 <button  onClick={onClickSend}>Send message</button>
+              
+
             </div>
         </div>
     </div>
