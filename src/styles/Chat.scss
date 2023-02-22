@@ -34,16 +34,7 @@
 }
 .button{
     padding:5px 5px;
-    margin-top: 765px;    
-
-    
- 
-  
-
-}
-    
-.roomTitle {
-    // deletebutton and edit button on chatpage, is that ok? they required that for this project
+    margin-top: 765px;
 }
 
 .chat-container{
@@ -69,4 +60,7 @@ body{
     min-height: 100vh;
     margin: 0 0 50px;
     padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
