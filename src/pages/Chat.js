@@ -34,7 +34,7 @@ const ChatPage = () => {
         })
     }
 
-    return <div>
+    return <div className="container">
         <h1>This is Chat Page</h1>
         <p>Room Name : {roomName}</p>
         <p>User Name : {userName}</p>
