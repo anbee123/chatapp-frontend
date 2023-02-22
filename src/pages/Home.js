@@ -1,12 +1,14 @@
 import { useState, useContext } from "react"
 import AppContext from "../context"
+import { useNavigate } from "react-router-dom"
 
 const HomePage = () => {
     const { userName, setUserName, roomName, setRoomName } = useContext(AppContext)
+    const navigate = useNavigate()
 
     const onRoomCreate = async () => {
         console.log('inputed values: ', {userName, roomName})
-        // await fetch()
+        navigate('/chat')
     }
     
     return <div>
