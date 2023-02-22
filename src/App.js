@@ -1,7 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { testGetAll } from './api'
 import { useEffect, useState } from 'react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -22,7 +23,7 @@ function App() {
     setIsLoading(false)
   }
   const handleClick111 = async () => {
-    await fetch(`http://localhost:8000/`, {method: 'GET'})
+    await fetch(`http://localhost:8000/api/chat`, {method: 'GET'})
       .then(response => response.json())
       .then(data => {
         console.log('api fetched', {data})
@@ -31,20 +32,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <button onClick={handleClick}>Test Api call</button>
         <button onClick={handleClick111}>Test Fetch call</button>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
     </div>
   );
