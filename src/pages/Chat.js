@@ -8,7 +8,7 @@ const ChatPage = () => {
 
     useEffect(() => {
         const fetchMessages = async () => {
-            await fetch(`http://localhost:8000/api/chat/${roomName}/${userName}`, {method: 'GET'})
+            await fetch(`http://localhost:8000/api/chat/${roomName}`, {method: 'GET'})
                 .then(response => response.json())
                 .then(data => setMessages(data))
                 .catch(err => console.log(err))
@@ -29,6 +29,11 @@ const ChatPage = () => {
         <div>
             The messages here
 
+            {messages && messages.map((item) => {
+                return <div key={item.id}>
+                    <p>{item.userName} : {item.message}</p>
+                </div>
+            })}
             <button>Send message</button>
         </div>
     </div>
