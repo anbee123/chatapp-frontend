@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useContext, useEffect, useState } from "react"
+import { FiSend } from "react-icons/fi";
 import { Link } from "react-router-dom"
 import AppContext from "../context"
 import "../styles/Chat.scss"
@@ -113,9 +114,9 @@ const ChatPage = () => {
             })}
            
                 <input placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
-                <button  onClick={onClickSend}>Send message</button>
+                <button  onClick={onClickSend}><FiSend /></button>
               
-
+        
             </div>
         </div>
     </div>
