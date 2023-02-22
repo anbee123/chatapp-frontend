@@ -88,9 +88,9 @@ const ChatPage = () => {
         <div className="chat-container">
 
         <div className="names">
-        <h1 className="header"> RoomName:{roomName}</h1>
+        <h1 className="header"> Room Name:{roomName}</h1>
         {/* <p>Room Name : {roomName}</p> */}
-        <h2 className="user-name">UserName: {userName}</h2>
+        <h2 className="user-name">User Name: {userName}</h2>
         </div>
         <div className="button">
         <div>
