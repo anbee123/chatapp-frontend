@@ -49,6 +49,9 @@
     }
 }
 .edit-button{
+    display: block;
+    cursor: pointer;
+    background-color: rgba(236, 241, 238, 0.6);;
     padding:5px 5px;
     margin-top: 765px;
     &:hover {
