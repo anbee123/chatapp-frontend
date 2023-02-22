@@ -15,7 +15,7 @@ const HomePage = () => {
     return <div className="container">
         
         <div className="wrapper">
-            <label htmlFor='room'>Enter the Room name</label>
+            <label htmlFor='room'>Enter The Room name</label>
             <input
                 type='text'
                 name='room'
@@ -25,11 +25,11 @@ const HomePage = () => {
             />
         </div>
         <div className="wrapper">
-            <label htmlFor='user'>Enter the User name</label>
+            <label htmlFor='user'>Enter Your Username</label>
             <input
                 type='text'
                 name='user'
-                placeholder='User name' 
+                placeholder='Username' 
                 value={userName}
                 onChange={e => setUserName(e.target.value)}
             />

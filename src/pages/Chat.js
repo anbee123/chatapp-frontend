@@ -54,17 +54,19 @@ const ChatPage = () => {
     return <div className="roomContainer">
         <div>
             <Link to='/'>
-                Back to Homepage
+                Select Other Rooms
             </Link>
         </div>
         <div className="chat-container">
 
-        <h1 className="header">{roomName}</h1>
+        <div className="names">
+        <h1 className="header"> RoomName:{roomName}</h1>
         {/* <p>Room Name : {roomName}</p> */}
-        <h2>User Name : {userName}</h2>
-
+        <h2 className="user-name">UserName: {userName}</h2>
+        </div>
+        <div className="button">
         <div>
-            The messages here
+           
 
             {messages && messages.map((item) => {
                 return <div key={item.id}>
@@ -77,9 +79,9 @@ const ChatPage = () => {
                     </p>
                 </div>
             })}
-            <div>
-                <input type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
-                <button onClick={onClickSend}>Send message</button>
+           
+                <input placeholder="Type The messages here" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                <button  onClick={onClickSend}>Send message</button>
             </div>
         </div>
     </div>
