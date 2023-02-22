@@ -104,7 +104,7 @@ const ChatPage = () => {
                                 {item.userName === userName && <>
                                     <div className="edit-button">
                                     <button onClick={() => handleEditMsg(item)}>edit</button>
-                                    <button onClick={() => handleDeleteMsg(item)}>X</button>
+                                    <button onClick={() => handleDeleteMsg(item)}>Delete</button>
                                     </div>
                                 </>}
                             </>

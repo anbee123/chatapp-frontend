@@ -43,6 +43,7 @@
 .button{
     padding:5px 5px;
     margin-top: 765px;
+    
     &:hover {
         background-color: rgba(236, 241, 238, 0.6);
         color: rgb(0, 255, 115);
@@ -51,6 +52,7 @@
 .edit-button{
     padding:5px 5px;
     margin-top: 765px;
+    display:flex;
     &:hover {
         background-color: rgba(236, 241, 238, 0.6);
         color: rgb(0, 255, 115);
@@ -59,7 +61,7 @@
 
 .chat-container{
     display:flex;
-    height:80vh;
+    height:60vh;
     flex-direction: column;
     margin-top: -190px;
     
@@ -70,7 +72,7 @@
     padding: 20px 30px;
 }
 body{
-    height:100vh;
+    height:80vh;
     display:flex;
     justify-content:center;
     align-items:center;
