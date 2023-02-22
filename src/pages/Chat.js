@@ -73,11 +73,7 @@ const ChatPage = () => {
     }
 
     return <div className="roomContainer">
-        <div>
-            <Link to='/'>
-                Select Other Rooms
-            </Link>
-        </div>
+       
         <div className="chat-container">
 
         <h1 className="roomTitle">{roomName}</h1>
@@ -105,8 +101,10 @@ const ChatPage = () => {
                             <>
                                 <span>{item.message}</span>
                                 {item.userName === userName && <>
+                                    <div className="edit-button">
                                     <button onClick={() => handleEditMsg(item)}>edit</button>
                                     <button onClick={() => handleDeleteMsg(item)}>X</button>
+                                    </div>
                                 </>}
                             </>
                         }
@@ -114,8 +112,10 @@ const ChatPage = () => {
                 </div>
             })}
            
-                <input placeholder="Type The messages here" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                <input placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
                 <button  onClick={onClickSend}>Send message</button>
+              
+
             </div>
         </div>
     </div>
