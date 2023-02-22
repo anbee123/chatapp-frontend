@@ -75,16 +75,17 @@ const ChatPage = () => {
     return <div className="roomContainer">
         <div>
             <Link to='/'>
-                Back to Homepage
+                Select Other Rooms
             </Link>
         </div>
+        <div className="chat-container">
 
         <h1 className="roomTitle">{roomName}</h1>
        
         <h2>User Name : {userName}</h2>
 
         <div>
-            The messages here
+           
 
             {messages && messages.sort((a, b) => a.id > b.id ? 1 : -1).map((item) => {
                 return <div key={item.id}>
@@ -112,11 +113,12 @@ const ChatPage = () => {
                     </p>
                 </div>
             })}
-            <div>
-                <input type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
-                <button onClick={onClickSend}>Send message</button>
+           
+                <input placeholder="Type The messages here" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                <button  onClick={onClickSend}>Send message</button>
             </div>
         </div>
+    </div>
     </div>
 }
 export default ChatPage
