@@ -1,12 +1,12 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import AppContext from "../context"
 
 const HomePage = () => {
-    const [userName, setUserName] = useState('')
-    const [roomName, setRoomName] = useState('')
+    const { userName, setUserName, roomName, setRoomName } = useContext(AppContext)
 
     const onRoomCreate = async () => {
         console.log('inputed values: ', {userName, roomName})
-        await fetch()
+        // await fetch()
     }
     
     return <div>
