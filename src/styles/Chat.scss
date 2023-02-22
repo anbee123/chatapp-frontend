@@ -37,12 +37,10 @@
     margin-top: -5%; /* for relative positioning */
 
 }
-.header{
 
-}
 .button{
     padding:5px 5px;
-    margin-top: 765px;
+    margin-top: 665px;
     
     &:hover {
         background-color: rgba(236, 241, 238, 0.6);
@@ -59,13 +57,12 @@
     }
 }
 
+
 .chat-container{
     display:flex;
-    height:60vh;
+    height:80vh;
     flex-direction: column;
-    margin-top: -190px;
-    
- 
+    margin-top: -170px;
     box-sizing: border-box;
     justify-content:center;
  
