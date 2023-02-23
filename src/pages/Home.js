@@ -12,28 +12,29 @@ const HomePage = () => {
         navigate('/chat')
     }
     
-    return <div className="container">
-        
-        <div className="wrapper">
-            <label htmlFor='room'>Enter The Room name</label>
-            <input
-                type='text'
-                name='room'
-                placeholder='Room name' 
-                value={roomName}
-                onChange={e => setRoomName(e.target.value)}
-            />
-        </div>
-        <div className="wrapper">
-            <label htmlFor='user'>Enter Your Username</label>
-            <input
-                type='text'
-                name='user'
-                placeholder='Username' 
-                value={userName}
-                onChange={e => setUserName(e.target.value)}
-            />
-            <button onClick={onRoomCreate}>Enter Room</button>
+    return <div className="homepage">
+        <div className="container">
+            <div className="wrapper">
+                <label htmlFor='room'>Enter The Room name</label>
+                <input
+                    type='text'
+                    name='room'
+                    placeholder='Room name' 
+                    value={roomName}
+                    onChange={e => setRoomName(e.target.value)}
+                />
+            </div>
+            <div className="wrapper">
+                <label htmlFor='user'>Enter Your Username</label>
+                <input
+                    type='text'
+                    name='user'
+                    placeholder='Username' 
+                    value={userName}
+                    onChange={e => setUserName(e.target.value)}
+                />
+                <button onClick={onRoomCreate}>Enter Room</button>
+            </div>
         </div>
     </div>
 }

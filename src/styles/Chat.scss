@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,900&display=swap');
 
+body{
+    background: url('https://cdn.pixabay.com/photo/2021/10/18/19/27/mobile-phone-6721915_960_720.png');
+    background-size: cover;
+    background-position: center	center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
 
-.roomContainer {
+.chatpage {
     width: 100%;
-    height: 80vh;
-    background-color: rgba(255, 255, 255, 0.8);
+    height: 100vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -12,105 +19,114 @@
     font-family: Red hat Display, sans-serif;
 	font-weight: 400;
     
-
-}
-.link{
-    position: 'relative';
-    top: '315px';
-    margin-top: -55px; /*for exact positioning */
-    margin-top: -5%; /* for relative positioning */
-    float: right;
-
-}
-.user-name{
-    position: 'relative';
-    top: '-15px';
-    margin-top: -15px; /*for exact positioning */
-    margin-top: -5%; /* for relative positioning */
+    .chat-container{
+        display:flex;
+        height:70vh;
+        flex-direction: column;
+        margin-top: 0px;
+        box-sizing: border-box;
+        justify-content:center;
     
+        padding: 20px 30px;
     
-}
-.names{
-    position: 'relative';
-    top: '-15px';
-    margin-top: -15px; /*for exact positioning */
-    margin-top: -5%; /* for relative positioning */
+        animation-duration: 2s;
+        animation-timing-function:ease-in;
+        width: 50%;
+        min-width: 400px;
+        max-width: 600px;
+    }
+    .content {
 
-}
+        background-color: rgba(255, 255, 255, 0.8);
+        .messageContainer {
+            height: 60vh;
+            overflow-y: auto;
+            border: 2px solid #2222221f;
+        }
+        height: 100%;
+    }
 
-.button{
-    padding:5px 5px;
-    margin-top: 665px;
+    .link{
+        position: 'relative';
+        top: '315px';
+        margin-top: -55px; /*for exact positioning */
+        margin-top: -5%; /* for relative positioning */
+        float: right;
+
+    }
+    .user-name{
+        position: 'relative';
+        top: '-15px';
+        margin-top: -15px; /*for exact positioning */
+        margin-top: -5%; /* for relative positioning */
+        
+        
+    }
+    .names{
+        position: 'relative';
+        top: '-15px';
+        margin-top: -15px; /*for exact positioning */
+        margin-top: -5%; /* for relative positioning */
+
+    }
+
+    .button{
+        padding:5px 5px;
+        
+        &:hover {
+            background-color: rgba(236, 241, 238, 0.6);
+            color: rgb(0, 255, 115);
+        }
+    }
+    .messages {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4px;
+        min-height: 40px;
+        border: 2px solid #00000029;
+        border-radius: 40px;
+        p {
+            margin: 0px;
+        }
+    }
+    .edit-button{
+        display: block;
+        cursor: pointer;
+        padding:5px 5px;
+        display:flex;
+        justify-content: center;
+        &:hover {
+            background-color: rgba(236, 241, 238, 0.6);
+            color: rgb(0, 255, 115);
+        }
+    }
+    @keyframes slideInLeft{
+        from{
+            transform: translateX(-300px);
+        }
+        to{
+            transform: translateX(0)
+
+        }
+    }
+    .slideInLeft{
+        animation: slideInLeft 1s ease-in;
+    }
+
+    .slideInRight{
+        animation: slideInRight 1s ease-in;
+    }
+
+    @keyframes slideInRight{
+        from{
+            transform: translateX(300px);
+        }
+        to{
+            transform: translateX(0)
+
+        }
+    }
     
-    &:hover {
-        background-color: rgba(236, 241, 238, 0.6);
-        color: rgb(0, 255, 115);
-    }
-}
-.edit-button{
-    display: block;
-    cursor: pointer;
-    background-color: rgba(236, 241, 238, 0.6);;
-    padding:5px 5px;
-    margin-top: 765px;
-    display:flex;
-    &:hover {
-        background-color: rgba(236, 241, 238, 0.6);
-        color: rgb(0, 255, 115);
-    }
-}
-@keyframes slideInLeft{
-    from{
-        transform: translateX(-300px);
-    }
-    to{
-        transform: translateX(0)
-
-    }
-}
-.slideInLeft{
-    animation: slideInLeft 1s ease-in;
-}
-
-.slideInRight{
-    animation: slideInRight 1s ease-in;
-}
-
-@keyframes slideInRight{
-    from{
-        transform: translateX(300px);
-    }
-    to{
-        transform: translateX(0)
-
-    }
-}
-.chat-container{
-    display:flex;
-    height:80vh;
-    flex-direction: column;
-    margin-top: -170px;
-    box-sizing: border-box;
-    justify-content:center;
- 
-    padding: 20px 30px;
-   
-    animation-duration: 2s;
-    animation-timing-function:ease-in;
-}
-body{
-    height:80vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: url('https://cdn.pixabay.com/photo/2021/10/18/19/27/mobile-phone-6721915_960_720.png');
-    background-size: cover;
-    background-position: center	center;
-    min-height: 100vh;
-    margin: 0 0 50px;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
 
