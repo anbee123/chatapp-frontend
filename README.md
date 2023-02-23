@@ -1,12 +1,12 @@
 # A real-time ChatApp
 This project is about building real-time communication features for users.
-
+![](public/Screenshot 2023-02-22 200645.png)
 ## Team members
 * Product Manager: Winston Tang
 * Repo Owner: An Bui
 * Frontend Lead: Kevin Tran
 * Backend Lead: An Bui
-
+## live link https://letschattogether.netlify.app/
 ## repo
 #### Backend: [https://github.com/anbee123/chatapp-backend-.git](https://github.com/anbee123/chatapp-backend-.git)
 #### Frontend:[https://github.com/anbee123/chatapp-frontend.git](https://github.com/anbee123/chatapp-frontend.git)
