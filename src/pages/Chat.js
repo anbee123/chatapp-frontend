@@ -77,9 +77,14 @@ const ChatPage = () => {
        
         <div className="chat-container">
 
-        <h1 className="roomTitle">{roomName}</h1>
+        <h2 className="roomTitle">Room Name: {roomName}</h2>
        
-        <h2>User Name : {userName}</h2>
+        <h2>User Name: {userName}</h2>
+        <div className="link">
+            <Link to='/'>
+                Select Other Rooms
+            </Link>
+        </div>
 
         <div>
            
@@ -102,9 +107,10 @@ const ChatPage = () => {
                             <>
                                 <span>{item.message}</span>
                                 {item.userName === userName && <>
+                                        
                                     <div className="edit-button">
                                     <button onClick={() => handleEditMsg(item)}>edit</button>
-                                    <button onClick={() => handleDeleteMsg(item)}>X</button>
+                                    <button onClick={() => handleDeleteMsg(item)}>Delete</button>
                                     </div>
                                 </>}
                             </>
@@ -112,10 +118,10 @@ const ChatPage = () => {
                     </p>
                 </div>
             })}
-           
-                <input placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
-                <button  onClick={onClickSend}><FiSend /></button>
-              
+               
+                <input className="button" placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                <button className="button" onClick={onClickSend}><FiSend /></button>
+            
         
             </div>
         </div>
