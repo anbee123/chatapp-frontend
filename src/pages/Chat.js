@@ -82,53 +82,48 @@ const ChatPage = () => {
         </div>
         <div className="chat-container">
 
-        <h2 className="roomTitle">Room Name: {roomName}</h2>
-       
-        <h2>User Name: {userName}</h2>
-        <div className="link">
-            <Link to='/'>
-                Select Other Rooms
-            </Link>
-        </div>
-
-        <div>
-           
-
-            {messages && messages.sort((a, b) => a.id > b.id ? 1 : -1).map((item) => {
-                return <div key={item.id}>
-                    <p>
-                        <strong>{item.userName}</strong> :
-                        {editItemId === item.id ?
-                            <>
-                                <input
-                                    type='text'
-                                    value={editItemValue}
-                                    onChange={e => setEditItemValue(e.target.value)}
-                                />
-                                <button onClick={() => handleEditingSave(item)}>save</button>
-                                <button onClick={() => handleEditingCancel(item)}>cancel</button>
-                            </>
-                            :
-                            <>
-                                <span>{item.message}</span>
-                                {item.userName === userName && <>
-                                        
-                                    <div className="edit-button">
-                                    <button onClick={() => handleEditMsg(item)}>edit</button>
-                                    <button onClick={() => handleDeleteMsg(item)}>Delete</button>
-                                    </div>
-                                </>}
-                            </>
-                        }
-                    </p>
-                </div>
-            })}
-               
-                <input className="button" placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
-                <button className="button" onClick={onClickSend}><FiSend /></button>
-            
-        
+            <div className="link">
+                <Link to='/'>
+                    Select Other Rooms
+                </Link>
             </div>
+
+            <div className="content">
+                <div className="messageContainer">
+                    {messages && messages.sort((a, b) => a.id > b.id ? 1 : -1).map((item) => {
+                        return <div key={item.id} className="messages">
+                            <p>
+                                <strong>{item.userName}</strong> :
+                                {editItemId === item.id ?
+                                    <>
+                                        <input className="slideInLeft"
+                                            type='text'
+                                            value={editItemValue}
+                                            onChange={e => setEditItemValue(e.target.value)}
+                                        />
+                                        <button onClick={() => handleEditingSave(item)}>save</button>
+                                        <button onClick={() => handleEditingCancel(item)}>cancel</button>
+                                    </>
+                                    :
+                                    <>
+                                        <span>{item.message}</span>
+                                        {item.userName === userName && <>
+                                            <div className="edit-button">
+                                                <button className="slideInLeft" onClick={() => handleEditMsg(item)}>edit</button>
+                                                <button className="slideInLeft" onClick={() => handleDeleteMsg(item)}>Delete</button>
+                                            </div>
+                                        </>}
+                                    </>
+                                }
+                            </p>
+                        </div>
+                    })}
+                </div>
+            </div>
+                <div className="inputMessage">
+                    <input className="button" placeholder="Enter message" type='text' value={sendMsg} onChange={e => setSendMsg(e.target.value)} />
+                    <button className="button" onClick={onClickSend}><FiSend /></button>
+                </div>
         </div>
     </div>
 }

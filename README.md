@@ -1,6 +1,6 @@
 # A real-time ChatApp
 This project is about building real-time communication features for users.
-![](public/Screenshot 2023-02-22 200645.png)
+![](public/demo.png)
 ## Team members
 * Product Manager: Winston Tang
 * Repo Owner: An Bui
