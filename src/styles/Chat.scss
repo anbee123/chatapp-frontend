@@ -19,39 +19,14 @@ body{
     font-family: Red hat Display, sans-serif;
 	font-weight: 400;
     
-    .chat-container{
-        display:flex;
-        height:70vh;
-        flex-direction: column;
-        margin-top: 0px;
-        box-sizing: border-box;
-        justify-content:center;
-    
-        padding: 20px 30px;
-    
-        animation-duration: 2s;
-        animation-timing-function:ease-in;
-        width: 50%;
-        min-width: 400px;
-        max-width: 600px;
-    }
-    .content {
 
-        background-color: rgba(255, 255, 255, 0.8);
-        .messageContainer {
-            height: 60vh;
-            overflow-y: auto;
-            border: 2px solid #2222221f;
-        }
-        height: 100%;
-    }
-
-    .link{
-        position: 'relative';
-        top: '315px';
-        margin-top: -55px; /*for exact positioning */
-        margin-top: -5%; /* for relative positioning */
-        float: right;
+}
+.link{
+    position: 'relative';
+    top: '315px';
+    margin-top: -55px; /*for exact positioning */
+    margin-top: -5%; /* for relative positioning */
+    float: right;
 
     }
     .user-name{
@@ -113,20 +88,58 @@ body{
     .slideInLeft{
         animation: slideInLeft 1s ease-in;
     }
-
-    .slideInRight{
-        animation: slideInRight 1s ease-in;
+@keyframes slideInLeft{
+    from{
+        transform: translateX(-300px);
     }
+    to{
+        transform: translateX(0)
 
-    @keyframes slideInRight{
-        from{
-            transform: translateX(300px);
-        }
-        to{
-            transform: translateX(0)
-
-        }
     }
-    
+}
+.slideInLeft{
+    animation: slideInLeft 1s ease-in;
+}
+
+.slideInRight{
+    animation: slideInRight 1s ease-in;
+}
+
+@keyframes slideInRight{
+    from{
+        transform: translateX(300px);
+    }
+    to{
+        transform: translateX(0)
+
+    }
+}
+.chat-container{
+    display:flex;
+    height:80vh;
+    flex-direction: column;
+    margin-top: -170px;
+    box-sizing: border-box;
+    justify-content:center;
+ 
+    padding: 20px 30px;
+   
+    animation-duration: 2s;
+    animation-timing-function:ease-in;
+}
+body{
+    height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: url('https://cdn.pixabay.com/photo/2021/10/18/19/27/mobile-phone-6721915_960_720.png');
+    background-size: cover;
+    background-position: center	center;
+    min-height: 100vh;
+    margin: 0 0 50px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
