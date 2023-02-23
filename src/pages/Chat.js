@@ -73,19 +73,19 @@ const ChatPage = () => {
         setEditItemValue('')
     }
 
-    return <div className="roomContainer">
-       
+    return <div className="roomContainer" >
+        
         <div className="chat-container">
 
-        <h2 className="roomTitle">Room Name: {roomName}</h2>
+        <h2 className="slideInLeft">Room Name: {roomName}</h2>
        
-        <h2>User Name: {userName}</h2>
+        <h2 className="slideInRight">User Name: {userName}</h2>
         <div className="link">
             <Link to='/'>
                 Select Other Rooms
             </Link>
         </div>
-
+    
         <div>
            
 
@@ -95,7 +95,7 @@ const ChatPage = () => {
                         <strong>{item.userName}</strong> :
                         {editItemId === item.id ?
                             <>
-                                <input
+                                <input className="slideInLeft"
                                     type='text'
                                     value={editItemValue}
                                     onChange={e => setEditItemValue(e.target.value)}
@@ -109,8 +109,8 @@ const ChatPage = () => {
                                 {item.userName === userName && <>
                                         
                                     <div className="edit-button">
-                                    <button onClick={() => handleEditMsg(item)}>edit</button>
-                                    <button onClick={() => handleDeleteMsg(item)}>Delete</button>
+                                    <button className="slideInLeft" onClick={() => handleEditMsg(item)}>edit</button>
+                                    <button className="slideInLeft" onClick={() => handleDeleteMsg(item)}>Delete</button>
                                     </div>
                                 </>}
                             </>
