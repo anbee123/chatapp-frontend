@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useState, useContext } from "react"
 import AppContext from "../context"
 import { useNavigate } from "react-router-dom"
 import '../styles/Home.scss'
@@ -12,9 +12,10 @@ const HomePage = () => {
         navigate('/chat')
     }
     
-    return <div className="homepage">
+    return <div className="homepage"> 
         <div className="container">
             <div className="wrapper">
+                <h1 className="rotate">CHAT-APP</h1>
                 <label htmlFor='room'>Enter The Room name</label>
                 <input
                     type='text'
