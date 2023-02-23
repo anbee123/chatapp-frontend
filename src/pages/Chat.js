@@ -27,7 +27,8 @@ const ChatPage = () => {
         return () => {
             clearInterval(timer)
         }
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const onClickSend = async () => {
         console.log('sending new message', sendMsg)
