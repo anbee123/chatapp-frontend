@@ -4,8 +4,8 @@ This project is about building real-time communication features for users.
 ## Team members
 * Product Manager: Winston Tang
 * Repo Owner: An Bui
-* Frontend Lead: An Bui
-* Backend Lead: Kevin Tran
+* Frontend Lead: Kevin Tran
+* Backend Lead: An Bui
 
 ## repo
 #### Backend: [https://github.com/anbee123/chatapp-backend-.git](https://github.com/anbee123/chatapp-backend-.git)
