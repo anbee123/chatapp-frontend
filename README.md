@@ -28,5 +28,16 @@ This project is about building real-time communication features for users.
 * As a user, you should be able to log-in in to the app
 * Add after succesfully logged in, choose a room to chat
  
+ ## future enhancements
+ * allow user to login / logout
+ * authentication for user to register / login / logout
+ * using Websocket.IO for app to be real-time chat app
+ * create group chat
+ * set avatar for each user
+ 
+ ## Trello board 
+ [live link](https://trello.com/b/Ep2395qR/project-4)
+ 
+ 
  ## Model ERD
  ![](public/ERD.png)
