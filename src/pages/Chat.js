@@ -4,6 +4,7 @@ import { FiSend } from "react-icons/fi";
 import { Link } from "react-router-dom"
 import AppContext from "../context"
 import "../styles/Chat.scss"
+import {BASE_URL} from "../api"
 
 const ChatPage = () => {
     const { userName, roomName } = useContext(AppContext)
@@ -14,7 +15,7 @@ const ChatPage = () => {
 
     useEffect(() => {
         const fetchMessages = async () => {
-            await fetch(`http://localhost:8000/api/chat/${roomName}`, { method: 'GET' })
+            await fetch(`${BASE_URL}${roomName}`, { method: 'GET' })
                 .then(response => response.json())
                 .then(data => setMessages(data))
                 .catch(err => console.log(err))
@@ -32,7 +33,7 @@ const ChatPage = () => {
 
     const onClickSend = async () => {
         console.log('sending new message', sendMsg)
-        await axios(`http://localhost:8000/api/chat/`, {
+        await axios(BASE_URL, {
             method: 'POST',
             data: {
                 'userName': userName,
@@ -50,14 +51,14 @@ const ChatPage = () => {
     }
     const handleDeleteMsg = async (message) => {
         console.log('delete a message', message)
-        await axios(`http://localhost:8000/api/chat/edit/${message.id}`, {
+        await axios(`${BASE_URL}edit/${message.id}`, {
             method: 'DELETE',
         })
     }
 
     const handleEditingSave = async (item) => {
         console.log('update message')
-        await axios(`http://localhost:8000/api/chat/edit/${item.id}`, {
+        await axios(`${BASE_URL}edit/${item.id}`, {
             method: 'PUT',
             data: {
                 'userName': item.userName,

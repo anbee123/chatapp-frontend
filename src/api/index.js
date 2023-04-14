@@ -1,14 +1,14 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8000/'
+export const BASE_URL = 'https://chat-appp.herokuapp.com/api/chat/'
 
 const API = axios.create({baseURL: BASE_URL})
 
 export const testGetAll = () => {
     console.log('api called')
-    return API.get('/api/chat/')
+    return API.get('/')
 }
 
 export const getMessages = (room, user) => {
-    return API.get(`/api/chat/${room}/${user}`)
+    return API.get(`/${room}/${user}`)
 }
